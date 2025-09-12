@@ -285,21 +285,35 @@ const Doctors = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  <button
-                    style={{
-                      background:
-                        "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
-                      color: "white",
-                      padding: "0.75rem 2rem",
-                      borderRadius: "1rem",
-                      fontWeight: "600",
-                      flex: 1,
-                      transition: "all 0.3s",
-                    }}
-                    disabled={doctor.status !== "available"}
-                  >
-                    Book Appointment
-                  </button>
+                <button
+  onClick={() => (window.location.href = "/appointments")}
+  style={{
+    background: "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
+    color: "white",
+    padding: "0.75rem 2rem",
+    borderRadius: "1rem",
+    fontWeight: 600,
+    flex: 1,
+    transition: "all 0.3s",
+    cursor: doctor.status === "available" ? "default" : "not-allowed",
+  }}
+  disabled={doctor.status !== "available"}
+  onMouseEnter={(e) => {
+    if (doctor.status === "available") {
+      e.currentTarget.style.transform = "scale(1.05)";
+      e.currentTarget.style.boxShadow = "0 6px 20px rgba(79,193,233,0.3)";
+      e.currentTarget.style.cursor = "pointer"; // cursor on hover
+    }
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "scale(1)";
+    e.currentTarget.style.boxShadow = "none";
+    e.currentTarget.style.cursor = doctor.status === "available" ? "default" : "not-allowed";
+  }}
+>
+  Book Appointment
+</button>
+
                   <button
                     style={{
                       backgroundColor: "hsl(210,15%,92%)",
