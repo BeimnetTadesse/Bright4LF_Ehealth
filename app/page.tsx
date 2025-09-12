@@ -63,7 +63,7 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={() => (window.location.href = "/appointments")}
-                  className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:cursor"
+                  className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:cursor-pointer"
                   style={{
                     background:
                       "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
@@ -76,7 +76,7 @@ const HeroSection = () => {
 
                 <button
                   onClick={() => (window.location.href = "/doctors")}
-                  className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                  className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:cursor-pointer"
                   style={{
                     background: "hsl(210,15%,92%)",
                     color: "hsl(210,50%,25%)",
