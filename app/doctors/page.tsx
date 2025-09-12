@@ -154,7 +154,7 @@ const Doctors = () => {
             African Doctors
           </span>
         </h1>
-  
+
         <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
           Our team of highly qualified African healthcare professionals brings
           together excellence, cultural understanding, and world-class medical
@@ -285,34 +285,42 @@ const Doctors = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                <button
-  onClick={() => (window.location.href = "/appointments")}
-  style={{
-    background: "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
-    color: "white",
-    padding: "0.75rem 2rem",
-    borderRadius: "1rem",
-    fontWeight: 600,
-    flex: 1,
-    transition: "all 0.3s",
-    cursor: doctor.status === "available" ? "default" : "not-allowed",
-  }}
-  disabled={doctor.status !== "available"}
-  onMouseEnter={(e) => {
-    if (doctor.status === "available") {
-      e.currentTarget.style.transform = "scale(1.05)";
-      e.currentTarget.style.boxShadow = "0 6px 20px rgba(79,193,233,0.3)";
-      e.currentTarget.style.cursor = "pointer"; // cursor on hover
-    }
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "scale(1)";
-    e.currentTarget.style.boxShadow = "none";
-    e.currentTarget.style.cursor = doctor.status === "available" ? "default" : "not-allowed";
-  }}
->
-  Book Appointment
-</button>
+                  <button
+                    onClick={() => (window.location.href = "/appointments")}
+                    style={{
+                      background:
+                        "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
+                      color: "white",
+                      padding: "0.75rem 2rem",
+                      borderRadius: "1rem",
+                      fontWeight: 600,
+                      flex: 1,
+                      transition: "all 0.3s",
+                      cursor:
+                        doctor.status === "available"
+                          ? "default"
+                          : "not-allowed",
+                    }}
+                    disabled={doctor.status !== "available"}
+                    onMouseEnter={(e) => {
+                      if (doctor.status === "available") {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.boxShadow =
+                          "0 6px 20px rgba(79,193,233,0.3)";
+                        e.currentTarget.style.cursor = "pointer"; // cursor on hover
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.cursor =
+                        doctor.status === "available"
+                          ? "default"
+                          : "not-allowed";
+                    }}
+                  >
+                    Book Appointment
+                  </button>
 
                   <button
                     style={{
@@ -376,29 +384,60 @@ const Doctors = () => {
             additional specialists in our network.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              style={{
-                background:
-                  "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
-                color: "white",
-                padding: "0.75rem 2rem",
-                borderRadius: "1rem",
-                fontWeight: "600",
-              }}
-            >
-              Request Doctor Consultation
-            </button>
-            <button
-              style={{
-                backgroundColor: "hsl(210,15%,92%)",
-                border: "2px solid hsl(200,85%,45%)",
-                color: "hsl(210,50%,25%)",
-                padding: "0.75rem 2rem",
-                borderRadius: "1rem",
-              }}
-            >
-              Contact Patient Care
-            </button>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              {/* Request Doctor Consultation Button */}
+              <button
+                onClick={() => (window.location.href = "/appointments")}
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
+                  color: "white",
+                  padding: "0.75rem 2rem",
+                  borderRadius: "1rem",
+                  fontWeight: 600,
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow =
+                    "0 6px 20px rgba(79,193,233,0.3)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Request Doctor Consultation
+              </button>
+
+              {/* Contact Patient Care Button */}
+              <button
+                onClick={() => (window.location.href = "/appointments")}
+                style={{
+                  backgroundColor: "hsl(210,15%,92%)",
+                  border: "2px solid hsl(200,85%,45%)",
+                  color: "hsl(210,50%,25%)",
+                  padding: "0.75rem 2rem",
+                  borderRadius: "1rem",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background =
+                    "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))";
+                  e.currentTarget.style.color = "#fff";
+                  e.currentTarget.style.boxShadow =
+                    "0 6px 20px rgba(79,193,233,0.3)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+     
+              >
+                Contact Patient Care
+              </button>
+            </div>
           </div>
         </div>
       </section>
