@@ -373,6 +373,7 @@ const Services = () => {
                       {service.description}
                     </p>
                     <button
+                     onClick={() => (window.location.href = "/appointments")}
                       style={{
                         width: "100%",
                         padding: "0.75rem 1rem",
