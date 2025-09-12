@@ -268,7 +268,7 @@ const Services = () => {
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: "5rem 0" }}>
+      <section style={{ padding: "5rem 0" ,   backgroundColor: "hsl(210,20%,98%)"   }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1rem" }}>
           {services.map((category, idx) => (
             <div key={idx} style={{ marginBottom: "5rem" }}>
@@ -319,6 +319,7 @@ const Services = () => {
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fit, minmax(300px,1fr))",
                   gap: "2rem",
+        
                 }}
               >
                 {category.services.map((service, sIdx) => (
@@ -378,7 +379,7 @@ const Services = () => {
                         borderRadius: 16,
                         fontWeight: 600,
                         fontSize: "1rem",
-                        background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
+                        background: "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))",
                         color: "#fff",
                         border: "none",
                         cursor: "pointer",
