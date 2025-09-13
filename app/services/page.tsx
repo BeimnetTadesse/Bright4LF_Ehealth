@@ -21,21 +21,18 @@ const Services = () => {
           name: "General Health Checkups",
           description:
             "Comprehensive annual physical examinations and preventive screenings",
-          price: "From $150",
-          duration: "60 minutes",
+          availability: "Available daily",
         },
         {
           name: "Chronic Disease Management",
           description:
             "Ongoing care for diabetes, hypertension, and other chronic conditions",
-          price: "From $120",
-          duration: "45 minutes",
+          availability: "Weekdays only",
         },
         {
           name: "Vaccinations & Immunizations",
           description: "Travel vaccines, flu shots, and routine immunizations",
-          price: "From $50",
-          duration: "15 minutes",
+          availability: "By appointment only",
         },
       ],
     },
@@ -55,22 +52,19 @@ const Services = () => {
           name: "Cardiology Consultations",
           description:
             "Heart health assessments, ECGs, and cardiovascular disease management",
-          price: "From $300",
-          duration: "90 minutes",
+          availability: "Mondays & Thursdays",
         },
         {
           name: "Dermatology Services",
           description:
             "Skin health, cosmetic treatments, and dermatological conditions",
-          price: "From $200",
-          duration: "60 minutes",
+          availability: "By appointment only",
         },
         {
           name: "Pediatric Care",
           description:
             "Comprehensive healthcare for children from infancy to adolescence",
-          price: "From $180",
-          duration: "45 minutes",
+          availability: "Weekdays & Saturdays",
         },
       ],
     },
@@ -89,22 +83,19 @@ const Services = () => {
         {
           name: "Telemedicine Consultations",
           description: "Video consultations with African healthcare professionals",
-          price: "From $80",
-          duration: "30 minutes",
+          availability: "Available 24/7",
         },
         {
           name: "Digital Prescriptions",
           description:
             "Electronic prescriptions with pharmacy integration and delivery",
-          price: "From $25",
-          duration: "10 minutes",
+          availability: "Within 2 hours",
         },
         {
           name: "Health Monitoring",
           description:
             "Ongoing remote vital signs tracking and health data analysis",
-          price: "From $60/month",
-          duration: "Ongoing",
+          availability: "Ongoing subscription",
         },
       ],
     },
@@ -124,22 +115,19 @@ const Services = () => {
           name: "24/7 Emergency Hotline",
           description:
             "Round-the-clock access to African emergency medicine specialists",
-          price: "Free consultation",
-          duration: "Immediate",
+          availability: "Always available",
         },
         {
           name: "Urgent Care Services",
           description:
             "Same-day appointments for non-life-threatening emergencies",
-          price: "From $250",
-          duration: "45 minutes",
+          availability: "Same-day service",
         },
         {
           name: "Ambulance Services",
           description:
             "Emergency medical transportation with qualified African paramedics",
-          price: "From $500",
-          duration: "As needed",
+          availability: "On-demand",
         },
       ],
     },
@@ -152,10 +140,7 @@ const Services = () => {
     cardForeground: "#1e293b",
     primary: "#4FC1E9",
     accent: "#6DD5ED",
-    primaryLight: "#8DE0F3",
-    accentLight: "#B3E5FC",
     secondary: "#e0f2fe",
-    secondaryForeground: "#1e293b",
     muted: "#f1f5f9",
   };
 
@@ -201,7 +186,7 @@ const Services = () => {
               }}
             >
               Comprehensive{" "}
-              <span style={{ display: "block", color: colors.accentLight }}>
+              <span style={{ display: "block", color: colors.accent }}>
                 Healthcare Services
               </span>
             </h1>
@@ -239,16 +224,9 @@ const Services = () => {
                   boxShadow: "0 4px 16px rgba(79,193,233,0.12)",
                   transition: "all 0.3s ease",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.boxShadow = "0 6px 20px rgba(79,193,233,0.2)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.boxShadow = "0 4px 16px rgba(79,193,233,0.12)")
-                }
               >
                 Browse All Services
               </button>
-
               <button
                 onClick={() => (window.location.href = "/appointments")}
                 style={{
@@ -261,15 +239,6 @@ const Services = () => {
                   border: "2px solid hsl(200,85%,45%)",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background =
-                    "linear-gradient(135deg, hsl(200,85%,45%), hsl(185,60%,50%))";
-                  e.currentTarget.style.color = "#fff";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "#fff";
-                  e.currentTarget.style.color = "hsl(200,85%,45%)";
                 }}
               >
                 Schedule Consultation
@@ -296,7 +265,9 @@ const Services = () => {
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: "5rem 1rem", backgroundColor: "hsl(210,20%,98%)" }}>
+      <section
+        style={{ padding: "5rem 1rem", backgroundColor: "hsl(210,20%,98%)" }}
+      >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           {services.map((category, idx) => (
             <div key={idx} style={{ marginBottom: "5rem" }}>
@@ -362,38 +333,33 @@ const Services = () => {
                       transition: "all 0.3s ease",
                       cursor: "pointer",
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                    onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
                   >
-                    <div
+                    <h3
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        marginBottom: "1rem",
-                        flexWrap: "wrap",
+                        fontSize: "1.25rem",
+                        fontWeight: "bold",
+                        color: colors.cardForeground,
+                        marginBottom: "0.5rem",
                       }}
                     >
-                      <h3
-                        style={{
-                          fontSize: "1.25rem",
-                          fontWeight: "bold",
-                          color: colors.cardForeground,
-                          marginBottom: "0.5rem",
-                        }}
-                      >
-                        {service.name}
-                      </h3>
-                      <div style={{ textAlign: "right" }}>
-                        <div style={{ fontWeight: "bold", color: colors.primary }}>
-                          {service.price}
-                        </div>
-                        <div style={{ fontSize: "0.875rem", color: "hsl(210,25%,45%)" }}>
-                          {service.duration}
-                        </div>
-                      </div>
-                    </div>
-                    <p style={{ color: "hsl(210,25%,45%)", marginBottom: "1.5rem" }}>
+                      {service.name}
+                    </h3>
+                    <p
+                      style={{
+                        color: "hsl(210,25%,45%)",
+                        marginBottom: "1rem",
+                      }}
+                    >
                       {service.description}
+                    </p>
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        color: colors.primary,
+                        marginBottom: "1.5rem",
+                      }}
+                    >
+                      {service.availability}
                     </p>
                     <button
                       onClick={() => (window.location.href = "/appointments")}
