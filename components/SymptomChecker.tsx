@@ -183,8 +183,10 @@ const diseases: Disease[] = [
             placeholder="Enter symptom or disease (e.g., fever, malaria)"
             value={input}
             onChange={(e) => {
+              const value = e.target.value;
               setInput(e.target.value);
               setSearched(false); // reset search message while typing
+              if (value.trim() === "") setResults([]);
             }}
             onKeyDown={handleKeyPress}
             className="flex-1 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[hsl(200,85%,45%)]"
