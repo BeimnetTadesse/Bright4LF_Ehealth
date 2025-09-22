@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import SymptomChecker from "@/components/SymptomChecker";
+
 
 const Services = () => {
   const services = [
@@ -387,6 +389,9 @@ const Services = () => {
           ))}
         </div>
       </section>
+      <section style={{ padding: "5rem 1rem", backgroundColor: "hsl(210,20%,98%)" }}>
+  <SymptomChecker />
+</section>
     </div>
   );
 };
